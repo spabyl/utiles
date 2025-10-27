@@ -14,7 +14,7 @@ export void hello()
 {
     std::cout << "hello from module .." << std::endl;
 }
-namespace okis
+namespace md
 {
-    export void it_ok() {}
+    export void ok_md() {}
 }
