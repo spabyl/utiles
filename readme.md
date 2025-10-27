@@ -1,5 +1,5 @@
 # About
-A single header file for console colors for C++ projects
+Console colors for C++ projects
 
 ## Features:
 - [x] UTF-8 support in Windows
