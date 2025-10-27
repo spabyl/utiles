@@ -13,6 +13,8 @@ endif()
 if(WIN32)
 	if (CMAKE_BUILD_TYPE STREQUAL "Release")
 		set(WIN_ICO ${CMAKE_SOURCE_DIR}/res/res.o ) 
+	elseif(CMAKE_BUILD_TYPE STREQUAL "Debug")
+		set(MY_EXECUTABLE_NAME app_d)
 	endif()
 else()
 	set(WIN_ICO " ")
@@ -22,6 +24,7 @@ add_executable(
 	${MY_EXECUTABLE_NAME}
 	${CMAKE_CURRENT_SOURCE_DIR}/tests/main_test.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/utiles.hpp
+	${CMAKE_CURRENT_SOURCE_DIR}/utiles.cpp
 )
 
 target_include_directories(

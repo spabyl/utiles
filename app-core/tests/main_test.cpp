@@ -9,7 +9,7 @@
 #include <iostream>
 #include "utiles.hpp"
 #include "logger.hpp"
-
+using namespace ut;
 // MAIN FUNCTION
 int main(int argc, char *argv[])
 {
@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	std::cout << "Setting console output UTF-8 for any characters types e.g. (¡Español!, Français, 日本語, 🤣😂😄🙂😎👀⚽✅)" << std::endl;
 
 	// SET CONSOLE TITLE
-	set_title("Mi Aplicación de Consola");
+	set_title("App test");
 
 	color_red();
 	std::cout << "Color:  red" << std::endl;
@@ -43,8 +43,6 @@ int main(int argc, char *argv[])
 
 	color_reset();
 	std::cout << "Reset all colors!" << std::endl;
-
-	
 
 	// HIDE CURSOR
 
