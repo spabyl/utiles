@@ -8,9 +8,12 @@ import <iostream>;
 
 export void hola()
 {
-    std::cout << "hola" << std::endl;
+    std::cout << "hola desde el módulo .." << std::endl;
 }
-
+export void hello()
+{
+    std::cout << "hello from module .." << std::endl;
+}
 namespace okis
 {
     export void it_ok() {}
