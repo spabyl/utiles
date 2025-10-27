@@ -64,12 +64,12 @@ namespace ut
 /// Define this to use ANSI escape sequences also on Windows
 /// (defaults to using WinAPI instead).
 #if 0
-#define RLUTIL_USE_ANSI
+#define UTIL_USE_ANSI
 #endif
 
-#ifndef RLUTIL_INLINE
+#ifndef UTIL_INLINE
 #ifdef _MSC_VER
-#define RLUTIL_INLINE __inline
+#define UTIL_INLINE __inline
 #else
 #define RLUTIL_INLINE static __inline__
 #endif
@@ -151,40 +151,40 @@ namespace ut
      */
 
     /*
-    const RLUTIL_STRING_T ANSI_CLS = "\033[2J\033[3J";
-    const RLUTIL_STRING_T ANSI_CONSOLE_TITLE_PRE = "\033]0;";
-    const RLUTIL_STRING_T ANSI_CONSOLE_TITLE_POST = "\007";
-    const RLUTIL_STRING_T ANSI_ATTRIBUTE_RESET = "\033[0m";
-    const RLUTIL_STRING_T ANSI_CURSOR_HIDE = "\033[?25l";
-    const RLUTIL_STRING_T ANSI_CURSOR_SHOW = "\033[?25h";
-    const RLUTIL_STRING_T ANSI_CURSOR_HOME = "\033[H";
-    const RLUTIL_STRING_T ANSI_BLACK = "\033[22;30m";
-    const RLUTIL_STRING_T ANSI_RED = "\033[22;31m";
-    const RLUTIL_STRING_T ANSI_GREEN = "\033[22;32m";
-    const RLUTIL_STRING_T ANSI_BROWN = "\033[22;33m";
-    const RLUTIL_STRING_T ANSI_BLUE = "\033[22;34m";
-    const RLUTIL_STRING_T ANSI_MAGENTA = "\033[22;35m";
-    const RLUTIL_STRING_T ANSI_CYAN = "\033[22;36m";
-    const RLUTIL_STRING_T ANSI_GREY = "\033[22;37m";
-    const RLUTIL_STRING_T ANSI_DARKGREY = "\033[01;30m";
-    const RLUTIL_STRING_T ANSI_LIGHTRED = "\033[01;31m";
-    const RLUTIL_STRING_T ANSI_LIGHTGREEN = "\033[01;32m";
-    const RLUTIL_STRING_T ANSI_YELLOW = "\033[01;33m";
-    const RLUTIL_STRING_T ANSI_LIGHTBLUE = "\033[01;34m";
-    const RLUTIL_STRING_T ANSI_LIGHTMAGENTA = "\033[01;35m";
-    const RLUTIL_STRING_T ANSI_LIGHTCYAN = "\033[01;36m";
-    const RLUTIL_STRING_T ANSI_WHITE = "\033[01;37m";
-    const RLUTIL_STRING_T ANSI_BACKGROUND_BLACK = "\033[40m";
-    const RLUTIL_STRING_T ANSI_BACKGROUND_RED = "\033[41m";
-    const RLUTIL_STRING_T ANSI_BACKGROUND_GREEN = "\033[42m";
-    const RLUTIL_STRING_T ANSI_BACKGROUND_YELLOW = "\033[43m";
-    const RLUTIL_STRING_T ANSI_BACKGROUND_BLUE = "\033[44m";
-    const RLUTIL_STRING_T ANSI_BACKGROUND_MAGENTA = "\033[45m";
-    const RLUTIL_STRING_T ANSI_BACKGROUND_CYAN = "\033[46m";
-    const RLUTIL_STRING_T ANSI_BACKGROUND_WHITE = "\033[47m";
+    const UTIL_STRING_T ANSI_CLS = "\033[2J\033[3J";
+    const UTIL_STRING_T ANSI_CONSOLE_TITLE_PRE = "\033]0;";
+    const UTIL_STRING_T ANSI_CONSOLE_TITLE_POST = "\007";
+    const UTIL_STRING_T ANSI_ATTRIBUTE_RESET = "\033[0m";
+    const UTIL_STRING_T ANSI_CURSOR_HIDE = "\033[?25l";
+    const UTIL_STRING_T ANSI_CURSOR_SHOW = "\033[?25h";
+    const UTIL_STRING_T ANSI_CURSOR_HOME = "\033[H";
+    const UTIL_STRING_T ANSI_BLACK = "\033[22;30m";
+    const UTIL_STRING_T ANSI_RED = "\033[22;31m";
+    const UTIL_STRING_T ANSI_GREEN = "\033[22;32m";
+    const UTIL_STRING_T ANSI_BROWN = "\033[22;33m";
+    const UTIL_STRING_T ANSI_BLUE = "\033[22;34m";
+    const UTIL_STRING_T ANSI_MAGENTA = "\033[22;35m";
+    const UTIL_STRING_T ANSI_CYAN = "\033[22;36m";
+    const UTIL_STRING_T ANSI_GREY = "\033[22;37m";
+    const UTIL_STRING_T ANSI_DARKGREY = "\033[01;30m";
+    const UTIL_STRING_T ANSI_LIGHTRED = "\033[01;31m";
+    const UTIL_STRING_T ANSI_LIGHTGREEN = "\033[01;32m";
+    const UTIL_STRING_T ANSI_YELLOW = "\033[01;33m";
+    const UTIL_STRING_T ANSI_LIGHTBLUE = "\033[01;34m";
+    const UTIL_STRING_T ANSI_LIGHTMAGENTA = "\033[01;35m";
+    const UTIL_STRING_T ANSI_LIGHTCYAN = "\033[01;36m";
+    const UTIL_STRING_T ANSI_WHITE = "\033[01;37m";
+    const UTIL_STRING_T ANSI_BACKGROUND_BLACK = "\033[40m";
+    const UTIL_STRING_T ANSI_BACKGROUND_RED = "\033[41m";
+    const UTIL_STRING_T ANSI_BACKGROUND_GREEN = "\033[42m";
+    const UTIL_STRING_T ANSI_BACKGROUND_YELLOW = "\033[43m";
+    const UTIL_STRING_T ANSI_BACKGROUND_BLUE = "\033[44m";
+    const UTIL_STRING_T ANSI_BACKGROUND_MAGENTA = "\033[45m";
+    const UTIL_STRING_T ANSI_BACKGROUND_CYAN = "\033[46m";
+    const UTIL_STRING_T ANSI_BACKGROUND_WHITE = "\033[47m";
     // Remaining colors not supported as background colors
 
-    RLUTIL_INLINE RLUTIL_STRING_T getANSIColor(const int c)
+    UTIL_INLINE UTIL_STRING_T getANSIColor(const int c)
     {
        switch (c)
        {
@@ -229,7 +229,7 @@ namespace ut
     /// Return ANSI background color escape sequence for specified number 0-15.
     ///
     /// See <Color Codes>
-    RLUTIL_INLINE RLUTIL_STRING_T getANSIBackgroundColor(const int c)
+    UTIL_INLINE UTIL_STRING_T getANSIBackgroundColor(const int c)
     {
        switch (c)
        {
@@ -259,7 +259,7 @@ namespace ut
     /// Don't change the background color
     ///
     /// See <Color Codes>
-    RLUTIL_INLINE void setColor(int c)
+    UTIL_INLINE void setColor(int c)
     {
 #if defined(_WIN32) && !defined(RLUTIL_USE_ANSI)
         HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -330,9 +330,9 @@ namespace ut
     /// See <Color Codes>
     /// See <setColor>
     /// See <saveDefaultColor>
-    RLUTIL_INLINE void resetColor(void)
+    UTIL_INLINE void resetColor(void)
     {
-#if defined(_WIN32) && !defined(RLUTIL_USE_ANSI)
+#if defined(_WIN32) && !defined(UTIL_USE_ANSI)
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),
                                 (WORD)saveDefaultColor());
 #else
@@ -344,7 +344,7 @@ namespace ut
     /// Clears screen, resets all attributes and moves cursor home.
     void cls(void)
     {
-#if defined(_WIN32) && !defined(RLUTIL_USE_ANSI)
+#if defined(_WIN32) && !defined(UTIL_USE_ANSI)
         // Based on
         // https://msdn.microsoft.com/en-us/library/windows/desktop/ms682022%28v=vs.85%29.aspx
         const HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -384,7 +384,7 @@ namespace ut
     */
     /// Function: setCursorVisibility
     /// Shows/hides the cursor.
-    RLUTIL_INLINE void setCursorVisibility(char visible)
+    UTIL_INLINE void setCursorVisibility(char visible)
     {
 #if defined(_WIN32) && !defined(RLUTIL_USE_ANSI)
         HANDLE hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -408,7 +408,7 @@ namespace ut
 
     /// Function: trows
     /// Get the number of rows in the terminal window or -1 on error.
-    RLUTIL_INLINE int trows(void)
+    UTIL_INLINE int trows(void)
     {
 #ifdef _WIN32
         CONSOLE_SCREEN_BUFFER_INFO csbi;
@@ -434,7 +434,7 @@ namespace ut
 
     /// Function: tcols
     /// Get the number of columns in the terminal window or -1 on error.
-    RLUTIL_INLINE int tcols(void)
+    UTIL_INLINE int tcols(void)
     {
 #ifdef _WIN32
         CONSOLE_SCREEN_BUFFER_INFO csbi;
@@ -474,9 +474,9 @@ namespace ut
 #if defined(_WIN32) // && !defined(RLUTIL_USE_ANSI)
         SetConsoleTitleA(title);
 #else
-        RLUTIL_PRINT(ANSI_CONSOLE_TITLE_PRE);
-        RLUTIL_PRINT(true_title);
-        RLUTIL_PRINT(ANSI_CONSOLE_TITLE_POST);
+        UTIL_PRINT(ANSI_CONSOLE_TITLE_PRE);
+        UTIL_PRINT(true_title);
+        UTIL_PRINT(ANSI_CONSOLE_TITLE_POST);
 #endif // defined(_WIN32) && !defined(RLUTIL_USE_ANSI)
     }
 
@@ -526,7 +526,7 @@ namespace ut
         clear();
     }
 #else
-    void init()
+    _DLL_API void init()
     {
         // Establece el color en otros sistemas
         color_white();

@@ -21,38 +21,38 @@
 /// Define this to use ANSI escape sequences also on Windows
 /// (defaults to using WinAPI instead).
 #if 0
-#define RLUTIL_USE_ANSI
+#define UTIL_USE_ANSI
 #endif
 
-#ifndef RLUTIL_INLINE
+#ifndef UTIL_INLINE
 #ifdef _MSC_VER
-#define RLUTIL_INLINE __inline
+#define UTIL_INLINE __inline
 #else
-#define RLUTIL_INLINE static __inline__
+#define UTIL_INLINE static __inline__
 #endif
 #endif
 namespace ut
 {
 
-    RLUTIL_INLINE void setColor(int c);
+    UTIL_INLINE void setColor(int c);
 
     void setBackgroundColor(int c);
 
     int saveDefaultColor(void);
 
-    RLUTIL_INLINE void resetColor(void);
+    UTIL_INLINE void resetColor(void);
 
     void cls(void);
 
-    RLUTIL_INLINE void setCursorVisibility(char visible);
+    UTIL_INLINE void setCursorVisibility(char visible);
 
     void hidecursor(void);
 
     void showcursor(void);
 
-    RLUTIL_INLINE int trows(void);
+    UTIL_INLINE int trows(void);
 
-    RLUTIL_INLINE int tcols(void);
+    UTIL_INLINE int tcols(void);
 
     void setConsoleTitle(const char *title);
 
